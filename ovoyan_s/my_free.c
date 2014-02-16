@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:31:10 2014 ovoyan_s
-** Last update Sat Feb 15 16:08:48 2014 ovoyan_s
+** Last update Sun Feb 16 15:45:14 2014 theron
 */
 
 #include	<stdio.h>
@@ -14,7 +14,8 @@
 void		free(void *ptr)
 {
   t_elem	*elem_to_use;
- 
+
+  pust("free try"); 
   if (ptr != NULL)
     {
       //      printf("Zero Step : \n%p\n%p\n", ptr, g_str->list_of_elems);
@@ -23,6 +24,7 @@ void		free(void *ptr)
       fusion_of_datas(elem_to_use); 
      //      printf("Third Step : It Works\n");
     }
+  pust("free succes");
 }
 
 t_elem		*ret_metadata_of_ptr(void *ptr_to_use)

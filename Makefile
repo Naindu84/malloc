@@ -5,11 +5,10 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Mon Feb 10 09:33:41 2014 ovoyan_s
-## Last update Thu Feb 13 11:17:27 2014 ovoyan_s
+## Last update Sat Feb 15 21:42:59 2014 theron
 ##
 
-SRC	=	main.c \
-		my_free.c \
+SRC	=	my_free.c \
 		my_gere_list.c \
 		my_malloc.c \
 		my_realloc.c \
@@ -18,7 +17,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 
-CFLAGS	=	-c -Wall -Werror -Wextra -fPIC
+CFLAGS	=	-c -Wall -Werror -Wextra -fPIC -g3
 
 RM	=	rm -rf
 

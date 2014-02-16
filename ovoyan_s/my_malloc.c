@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sun Feb 16 13:34:24 2014 ovoyan_s
+** Last update Sun Feb 16 15:45:25 2014 theron
 */
 
 #include	<stdio.h>
@@ -35,6 +35,7 @@ void		*malloc(size_t size)
 {
   void		*ptr_to_ret;
 
+  pust("malloc try");
   ptr_to_ret = NULL;
   if (size == 0)
     return (NULL);
@@ -48,7 +49,7 @@ void		*malloc(size_t size)
       return (NULL);
   if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
       return (NULL);
-
+  pust("malloc succes");
   return (ptr_to_ret);
 }
 

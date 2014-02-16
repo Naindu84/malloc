@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sat Feb 15 12:34:12 2014 ovoyan_s
+** Last update Sat Feb 15 22:35:59 2014 theron
 */
 
 #include	<stdio.h>
@@ -36,6 +36,7 @@ void		*malloc(size_t size)
   void		*ptr_to_ret;
   t_elem	*elem_to_use;
 
+  puts("malloc try");
   ptr_to_ret = NULL;
   if (g_str == NULL)
     {
@@ -60,6 +61,7 @@ void		*malloc(size_t size)
 	  elem_to_use->ptr_free = 0;
 	}
     }
+  puts("malloc success");
   return (ptr_to_ret);
 }
 
