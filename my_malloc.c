@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sat Feb 15 12:34:12 2014 ovoyan_s
+** Last update Sun Feb 16 17:21:27 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -17,10 +17,10 @@ t_gen		*g_str = NULL;
 int		init_malloc()
 {
   g_str = sbrk(sizeof(*g_str));
+  g_str->list_of_elems = NULL;
+  g_str->nb_of_elems = 0;
   g_str->nb_of_pages = 0;
   g_str->pages_size = getpagesize();
-  g_str->nb_of_elems = 0;
-  g_str->list_of_elems = NULL;
   if ((g_str->begin_process_break_limit = sbrk(0)) == (void*)-1)
     return (-1);
   g_str->allocated_memory = g_str->begin_process_break_limit;
@@ -34,32 +34,22 @@ int		init_malloc()
 void		*malloc(size_t size)
 {
   void		*ptr_to_ret;
-  t_elem	*elem_to_use;
 
   ptr_to_ret = NULL;
+  printf("MALLOC\n");
+  if (size == 0)
+    return (NULL);
   if (g_str == NULL)
     {
       if (init_malloc() == -1)
 	return (NULL);
     }
 
-  if ((elem_to_use = ret_free_good_elem(size)) == NULL)
-    {
-      if (add_elem_in_list(g_str->nb_of_elems) == -1)
-	return (NULL);
-      if ((ptr_to_ret = my_sbrk(size)) == (void*)-1)
-	return (NULL);
-      if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
-	return (NULL);
-    }
-  else
-    {
-      if (elem_to_use != NULL)
-	{
-	  elem_to_use->size = size;
-	  elem_to_use->ptr_free = 0;
-	}
-    }
+  if ((ptr_to_ret = check_add_elem_and_sbrk(ptr_to_ret, size)) == NULL)
+      return (NULL);
+  if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
+      return (NULL);
+
   return (ptr_to_ret);
 }
 

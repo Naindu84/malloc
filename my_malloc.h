@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:40:04 2014 ovoyan_s
-** Last update Thu Feb 13 17:21:24 2014 ovoyan_s
+** Last update Sat Feb 15 18:23:51 2014 ovoyan_s
 */
 
 #ifndef			L_MALLOC_H
@@ -63,7 +63,7 @@ void			fusion_of_ptr(t_elem *elem_first, t_elem *elem_sec);
 */
 
 int			add_elem_in_list(int elem_position);
-int			add_elem_in_list_with_pos(t_elem *elem_to_add, int elem_position);
+int			add_elem_in_list_with_pos(t_elem *elem_to_add);
 t_elem			*find_elem_in_list(int elem_position);
 t_elem			*fill_elem(void *ptr_of_elem_to_set, t_elem *elem_to_fill,
 				   size_t size_to_set);
@@ -83,5 +83,9 @@ t_elem			*ret_free_good_elem(size_t size);
 */
 
 void			*realloc(void *ptr, size_t size);
+t_elem			*refill_elem(void *ptr_of_elem_to_set, void *ptr_to_use,
+				     t_elem *elem_to_fill, size_t size_to_set);
+void			*malloc_for_realloc(void *ptr_to_use, size_t size);
+void			*check_add_elem_and_sbrk(void *ptr_to_ret, size_t size);
 
 #endif			/*	L_MALLOC_H	*/

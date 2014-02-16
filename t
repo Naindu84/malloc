@@ -25,8 +25,20 @@ Donc il y a trois choix possibles :
 
 -Soit l'element en question est deja malloque et il n'y a pas assez de place pour pouvoir le remettre.
 
- -
+ -On va creer une nouvelle metadata.
+ -On va recréer un nouveau pointeur de donnee.
+ -On le fera pointer sur l'ancien pointeur de donnee.
+ -On changera sa taille en fonction de sa nouvelle taille.
+ -On changera son statut free en pas free.
 
 -Soit l'element en question n'est pas encore malloque.
 
  -On effectue le malloc correctement.
+
+0x4222288
+Adresse du premier pointeur 0x4222050
+Taille du pointeur 568
+Adresse du deuxieme pointeur 0x42222b0
+Taille du pointeur 42
+Adresse du troisieme pointeur 0x4222304
+Taille du pointeur 1457664

@@ -5,11 +5,10 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Mon Feb 10 09:33:41 2014 ovoyan_s
-## Last update Thu Feb 13 11:17:27 2014 ovoyan_s
+## Last update Sat Feb 15 17:52:14 2014 ovoyan_s
 ##
 
-SRC	=	main.c \
-		my_free.c \
+SRC	=	my_free.c \
 		my_gere_list.c \
 		my_malloc.c \
 		my_realloc.c \
@@ -34,7 +33,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 		$(CC) -shared -o $(LIBNAME) $(OBJ)
-		# $(LINK) $(LIBNAME) $(LIBLINK)
+		$(LINK) $(LIBNAME) $(LIBLINK)
 
 clean:
 		$(RM) $(OBJ)
