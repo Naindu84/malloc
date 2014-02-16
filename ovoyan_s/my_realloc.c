@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:53 2014 ovoyan_s
-** Last update Sat Feb 15 17:31:09 2014 ovoyan_s
+** Last update Sun Feb 16 17:21:39 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -14,19 +14,15 @@
 
 void		*realloc(void *ptr, size_t size)
 {
-  //  printf("REALLOC STEP 1\n");
+  printf("REALLOC\n");
   if (ptr != NULL)
     {
-      //  printf("REALLOC STEP 2\n");
       free(ptr);
-      // printf("REALLOC STEP 3\n");
       if (ptr != NULL)
 	return (malloc_for_realloc(ptr, size));
       else if (ptr == NULL)
 	return (malloc(size));
-      //printf("REALLOC STEP 4\n");
     }
-  //  printf("REALLOC STEP 1\n");
   return (NULL);
 }
 

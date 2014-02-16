@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sun Feb 16 13:34:24 2014 ovoyan_s
+** Last update Sun Feb 16 17:21:27 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -36,6 +36,7 @@ void		*malloc(size_t size)
   void		*ptr_to_ret;
 
   ptr_to_ret = NULL;
+  printf("MALLOC\n");
   if (size == 0)
     return (NULL);
   if (g_str == NULL)
