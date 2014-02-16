@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sun Feb 16 17:21:27 2014 ovoyan_s
+** Last update Sun Feb 16 18:33:29 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -36,7 +36,7 @@ void		*malloc(size_t size)
   void		*ptr_to_ret;
 
   ptr_to_ret = NULL;
-  printf("MALLOC\n");
+  //  printf("MALLOC %zu\n", size);
   if (size == 0)
     return (NULL);
   if (g_str == NULL)
@@ -46,10 +46,9 @@ void		*malloc(size_t size)
     }
 
   if ((ptr_to_ret = check_add_elem_and_sbrk(ptr_to_ret, size)) == NULL)
-      return (NULL);
+    return (NULL);
   if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
-      return (NULL);
-
+    return (NULL);
   return (ptr_to_ret);
 }
 

@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 17:49:54 2014 ovoyan_s
-** Last update Sun Feb 16 13:37:21 2014 ovoyan_s
+** Last update Sun Feb 16 18:36:48 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -33,12 +33,7 @@ int		add_elem_in_list(int elem_position)
       g_str->nb_of_elems = 1;
     } 
   else
-    {
-      add_elem_in_list_with_pos(elem_to_add);
-      /*      printf("%p", elem_to_add);
-      if (elem_to_add == NULL)
-      printf("ERROR 1\n");*/
-    }
+    return (add_elem_in_list_with_pos(elem_to_add));
   return (0);
 }
 
@@ -107,7 +102,9 @@ t_elem		*fill_elem(void *ptr_of_elem_to_set,
 {
   if (ptr_of_elem_to_set == (void*)-1)
       return (NULL);
-
+  
+  if (elem_to_fill == NULL)
+    return (NULL);
   elem_to_fill->size = size_to_set;
   elem_to_fill->ptr_free = 0;
   elem_to_fill->ptr_of_elem = ptr_of_elem_to_set;
