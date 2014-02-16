@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:53 2014 ovoyan_s
-** Last update Sun Feb 16 17:21:39 2014 ovoyan_s
+** Last update Sun Feb 16 19:56:29 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -14,15 +14,14 @@
 
 void		*realloc(void *ptr, size_t size)
 {
-  printf("REALLOC\n");
   if (ptr != NULL)
     {
       free(ptr);
       if (ptr != NULL)
 	return (malloc_for_realloc(ptr, size));
-      else if (ptr == NULL)
-	return (malloc(size));
     }
+  else if (ptr == NULL)
+    return (malloc(size));
   return (NULL);
 }
 
@@ -56,6 +55,7 @@ void		*malloc_for_realloc(void *ptr_to_use, size_t size)
 	return (NULL);
     }
   ptr_to_ret = ptr_to_use;
+
   if ((elem_to_use = ret_free_good_elem(size)) == NULL)
     {
       if ((ptr_to_ret = check_add_elem_and_sbrk(ptr_to_ret, size)) == NULL)
@@ -64,6 +64,10 @@ void		*malloc_for_realloc(void *ptr_to_use, size_t size)
 		      find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
 	return (NULL);
     }
+  else
+    if (refill_elem(ptr_to_ret, ptr_to_use, elem_to_use, size) == NULL)
+      return (NULL);
+
   return (ptr_to_ret);
 }
 

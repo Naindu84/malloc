@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 09:47:47 2014 ovoyan_s
-** Last update Sun Feb 16 17:02:13 2014 ovoyan_s
+** Last update Sun Feb 16 19:41:40 2014 ovoyan_s
 */
 
 #include		<stdio.h>
@@ -25,8 +25,8 @@ int			main()
   word[2] = '2';
   word[3] = '3';
   word[4] = '4';
-  yol = malloc(42);
-  free(yol);
+  sbrk(40000);
+  yol = realloc(word, 42);
   yol_2 = malloc(1457664);
   /*  printf("First occurence : %s\n", word);
   word = realloc(word, sizeof(*word) * 2);

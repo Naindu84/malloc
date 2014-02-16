@@ -42,3 +42,8 @@ Adresse du deuxieme pointeur 0x42222b0
 Taille du pointeur 42
 Adresse du troisieme pointeur 0x4222304
 Taille du pointeur 1457664
+
+40 + 568 + 40 + 42
+80 + 568 + 42
+80 + 610
+690

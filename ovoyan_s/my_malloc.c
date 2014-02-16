@@ -5,7 +5,7 @@
 ** Login   <ovoyan_s@epitech.net>
 ** 
 ** Started on  Mon Feb 10 13:30:34 2014 ovoyan_s
-** Last update Sun Feb 16 17:21:27 2014 ovoyan_s
+** Last update Sun Feb 16 19:49:04 2014 ovoyan_s
 */
 
 #include	<stdio.h>
@@ -34,9 +34,9 @@ int		init_malloc()
 void		*malloc(size_t size)
 {
   void		*ptr_to_ret;
+  void		*elem_to_use;
 
   ptr_to_ret = NULL;
-  printf("MALLOC\n");
   if (size == 0)
     return (NULL);
   if (g_str == NULL)
@@ -45,11 +45,16 @@ void		*malloc(size_t size)
 	return (NULL);
     }
 
-  if ((ptr_to_ret = check_add_elem_and_sbrk(ptr_to_ret, size)) == NULL)
+  if ((elem_to_use = ret_free_good_elem(size)) == NULL)
+    {
+      if ((ptr_to_ret = check_add_elem_and_sbrk(ptr_to_ret, size)) == NULL)
+	return (NULL);
+      if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
+	return (NULL);
+    }
+  else
+    if (fill_elem(ptr_to_ret, elem_to_use, size) == NULL)
       return (NULL);
-  if (fill_elem(ptr_to_ret, find_elem_in_list(g_str->nb_of_elems - 1), size) == NULL)
-      return (NULL);
-
   return (ptr_to_ret);
 }
 

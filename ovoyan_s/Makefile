@@ -5,7 +5,7 @@
 ## Login   <ovoyan_s@epitech.net>
 ## 
 ## Started on  Mon Feb 10 09:33:41 2014 ovoyan_s
-## Last update Sat Feb 15 17:52:14 2014 ovoyan_s
+## Last update Sun Feb 16 18:53:11 2014 ovoyan_s
 ##
 
 SRC	=	my_free.c \
@@ -17,7 +17,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	gcc
 
-CFLAGS	=	-c -Wall -Werror -Wextra -fPIC
+CFLAGS	=	-c -Wall -Werror -Wextra -fPIC -g3
 
 RM	=	rm -rf
 
